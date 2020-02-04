@@ -14,7 +14,23 @@
         </a>
     </nav>
 
-    <div class="container-fluid mt-5">
+    <form>
+      <div class="container mt-3">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="City">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="State">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Zip">
+        </div>
+      </div>
+      </div>
+    </form>
+
+    <div class="container-fluid mt-3">
         <table class="table table-bordered table-responsive-sm">
             <thead>
                 <tr>
@@ -26,6 +42,7 @@
                     <td>Tanggal</td>
                     <td>Status</td>
                     <td>Feedback</td>
+                    <td>Action</td>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +56,15 @@
                     <td>{{$p->tanggal}}</td>
                     <td>{{$p->status}}</td>
                     <td>{{$p->feedback}}</td>
+                    @if($p->status !== "Telah Diselesaikan")
+                    <td>
+                      <a href="/edit/{{ $p->id_pengeluhan }}" class="btn btn-sm active" style="background-color: #ffb380;" role="button" aria-pressed="true">Proses</a>
+                    </td>
+                    @else
+                    <td>
+                      <button type="button" class="btn btn-sm" style="background-color: #ffb380;" disabled>Done</button>
+                    </td>
+                    @endif
                 </tr>
                 @endforeach
             </tbody>

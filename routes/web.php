@@ -13,5 +13,7 @@
 
 Route::get('/', 'UserController@index');
 Route::post('/submit', 'UserController@submit');
-Route::get('/login', 'LoginController@index');
+Route::get('/loginpage', 'LoginController@index');
+Route::post('/login', 'LoginController@login');
 Route::get('/admin', 'AdminController@index');
+Route::get('/edit/{id}', 'AdminController@edit');

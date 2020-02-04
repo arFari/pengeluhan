@@ -23,4 +23,18 @@ class UserController extends Controller
         ]);
         return redirect('/');
     }
+
+    public function searchNik(Request $request){
+        $result = DB::table('pengeluhan')->where('nik', 'like', '%'+$request->nik+'%')->get;
+        return redirect('/search');
+    }
+
+    public function searchId(Request $request){
+        $result = DB::table('pengeluhan')->where('id_pengeluhan', 'like', '%'+$request->id+'%')->get;
+        return redirect('/search');
+    }
+
+    public function feedback(Request $request){
+        DB::table('pengeluhan')->update(['feedback' => $request->feedback]);
+    }
 }

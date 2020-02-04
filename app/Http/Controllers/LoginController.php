@@ -12,9 +12,12 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
-        $result = DB::table('admin')->where('username', $request->user && 'password', $request->pass)->get();
-        if($result > 0){
-            return view('admin');
+        $result = DB::table('admin')->where('username', $request->user)->where('password', $request->pass)->first();
+        $username = $result->username ?? null;
+        if($username == null){
+            return redirect('/loginpage');
+        } else{
+            return redirect('/admin');
         }
     }
 }

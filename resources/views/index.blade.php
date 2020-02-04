@@ -8,22 +8,22 @@
     <title>Pengaduan Masyarakat</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffb380;">
       <!-- <div class="container"> -->
-        <a class="navbar-brand" href="#">
-          Ngadu
-        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Form<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Search</a>
             <a class="nav-item nav-link" href="#">Feedback</a>
             <a class="nav-item nav-link" href="#">About</a>
           </div>
         </div>
+        <a class="navbar-brand ml-auto" href="/loginpage">
+          Ngadu!
+        </a>
       <!-- </div> -->
     </nav>
     
@@ -54,7 +54,7 @@
             <input type="text" class="form-control" name="lokasi">
           </div>
           <div class="form-group">
-            <button type="submit" name="submit" class="btn btn-md" style="background-color: #e3f2fd;">Adukan</button>
+            <button type="submit" name="submit" class="btn btn-md" style="background-color: #ffb380;">Adukan</button>
           </div>
         </form>
         </div>
