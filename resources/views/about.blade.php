@@ -1,10 +1,3 @@
-<script>
-  var msg = '{{Session::get('alert')}}';
-  var exist = '{{Session::has('alert')}}';
-  if(exist){
-      alert(msg);
-  }
-</script>
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,10 +14,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/">Home<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/search">Search</a>
             <a class="nav-item nav-link" href="/feedbackpage">Feedback</a>
-            <a class="nav-item nav-link" href="/about">About</a>
+            <a class="nav-item nav-link active" href="/about">About</a>
           </div>
         </div>
         <a class="navbar-brand ml-auto" href="/loginpage">
@@ -32,38 +25,32 @@
         </a>
     </nav>
     
-    <div class="container mt-5">
-      <div class="card">
-        <div class="card-body">
-        <form action="/submit" method="post">
-          {{ csrf_field() }}
-          <div class="form-group">
-            <label>NIK</label>
-            <input type="text" class="form-control" name="nik">
-          </div>
-          <div class="form-group">
-            <label>Jenis Pengaduan</label>
-            <select class="form-control" name="jenis">
-              <option value="">-Pilih-</option>
-              <option value="Kebersihan">Kebersihan</option>
-              <option value="Keamanan">Keamanan</option>
-              <option value="Sarana Prasarana">Sarana Prasarana</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Keluhan</label>
-            <textarea class="form-control" name="keluhan" rows="3"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Lokasi</label>
-            <input type="text" class="form-control" name="lokasi">
-          </div>
-          <div class="form-group">
-            <button type="submit" name="submit" class="btn btn-md" style="background-color: #e3f2fd;">Adukan</button>
-          </div>
-        </form>
+    <div class="container mt-3">
+      <h2 class="text-center">Tentang Kami</h2>
+      <h5 class="text-center">Kami adalah website yang disediakan pemerintah Jakarta Barat</br>
+      untuk warga sekitar Jakarta Barat melaporkan keluhan-keluhan masalah </br>
+      Keamanan, Kebersihan, dan Sarana Parasana di sekitar wilayah Jakarta Barat.
+      </h5>
+    </div>
+
+    <div class="container mt-4 mb-6 text-center">
+    <div class="row justify-content-md-center">
+    <div class="col-8">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://tempatwisataseru.com/wp-content/uploads/2019/04/Taman-Ria-Rio.jpg" class="d-block w-100 l-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://radardepok.com/wp-content/uploads/2019/05/terminal.gif" class="d-block w-100 l-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://barat.jakarta.go.id/v15/assets/img/bg/files/WhatsApp_Image_2018-12-21_at_10.07.18.jpeg" class="d-block w-100 l-100">
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -13,13 +13,25 @@ class AdminController extends Controller
     }
 
     public function edit($id){
-        DB::table('pengeluhan')->where('id_pengeluhan', $id)->update(['status' => 'Telah Diselesaikan']);
+        DB::table('pengeluhan')->orderBy('id_pengeluhan')->where('id_pengeluhan', $id)->update(['status' => 'Telah Diselesaikan']);
         return redirect('/admin');
     }
 
-    public function searchDate(Request $request){
-        DB::table('pengeluhan')->whereDate('tanggal', $request->date);
-        return redirect('/admin');
+    public function search(Request $request){
+        $result = null;
+        if(isset($request->date)){
+            $result = DB::table('pengeluhan')->whereDate('tanggal', $request->date)->get();
+        }
+        else if(isset($request->bulan)){
+            $result = DB::table('pengeluhan')->whereMonth('tanggal', $request->bulan)->get();
+        }
+        else if (isset($request->nik)) {
+            $result = DB::table('pengeluhan')->where('nik', $request->nik)->get();
+        }
+        else if (isset($request->jenis)) {
+            $result = DB::table('pengeluhan')->where('jenis', $request->jenis)->get();
+        }
+        return view('admin', ['pengeluhan' => $result]);
     }
 
     public function searchMonth(Request $request){

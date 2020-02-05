@@ -8,20 +8,20 @@
     <title>Pengaduan Masyarakat</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Search</a>
-            <a class="nav-item nav-link" href="#">Feedback</a>
-            <a class="nav-item nav-link" href="#">About</a>
+            <a class="nav-item nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/search">Search</a>
+            <a class="nav-item nav-link" href="/feedbackpage">Feedback</a>
+            <a class="nav-item nav-link" href="/about">About</a>
           </div>
         </div>
         <a class="navbar-brand ml-auto" href="#">
-          Ngadu!
+          Pengeluhan
         </a>
     </nav>
     
@@ -36,10 +36,10 @@
           </div>
           <div class="form-group">
             <label>Password</label>
-            <input type="text" class="form-control" name="pass">
+            <input type="password" class="form-control" name="pass">
           </div>
           <div class="form-group">
-            <button type="submit" name="submit" class="btn btn-block" style="background-color: #e3f2fd;">Adukan</button>
+            <button type="submit" name="submit" class="btn btn-block" style="background-color: #ffb380;">Adukan</button>
           </div>
         </form>
         </div>

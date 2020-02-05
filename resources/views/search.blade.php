@@ -8,35 +8,35 @@
     <title>Pengaduan Masyarakat</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="/">
-          Admin
-        </a>
-    </nav>
+  <nav class="navbar fixed-bottom navbar-expand-lg navbar-light" style="background-color: #ffb380;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Home</a>
+        <a class="nav-item nav-link active" href="/search">Search</a>
+        <a class="nav-item nav-link" href="/feedbackpage">Feedback</a>
+        <a class="nav-item nav-link" href="/about">About</a>
+        </div>
+    </div>
+    <a class="navbar-brand ml-auto" href="/loginpage">
+        Pengeluhan
+    </a>
+</nav>
 
-    <div class="container mt-3">
-      <form action="/searchadm" method="post">
+<div class="container mt-3">
+    <form action="/searchuser" method="post">
         @csrf
         <div class="form-row">
           <div class="col">
-            <input type="text" class="form-control" name="date" placeholder="Tanggal">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" name="bulan" placeholder="Bulan">
+            <input type="text" class="form-control" name="id" placeholder="ID">
           </div>
           <div class="col">
             <input type="text" class="form-control" name="nik" placeholder="NIK">
           </div>
           <div class="col">
-            <select class="form-control" name="jenis">
-              <option value="">-Pilih-</option>
-              <option value="Kebersihan">Kebersihan</option>
-              <option value="Keamanan">Keamanan</option>
-              <option value="Sarana Prasarana">Sarana Prasarana</option>
-            </select>
-          </div>
-          <div class="col">
-          <button type="submit" name="submit" class="btn btn-md" style="background-color: #ffb380;">Cari</button>
+          <button type="submit" name="submit" class="btn btn-md" style="background-color: #e3f2fd;">Cari</button>
           </div>
         </div>
       </form>
@@ -54,9 +54,9 @@
                     <td>Tanggal</td>
                     <td>Status</td>
                     <td>Feedback</td>
-                    <td>Action</td>
                 </tr>
             </thead>
+            @if(isset($pengeluhan))
             <tbody>
                 @foreach($pengeluhan as $p)
                 <tr>
@@ -68,18 +68,10 @@
                     <td>{{$p->tanggal}}</td>
                     <td>{{$p->status}}</td>
                     <td>{{$p->feedback}}</td>
-                    @if($p->status !== "Telah Diselesaikan")
-                    <td>
-                      <a href="/edit/{{ $p->id_pengeluhan }}" class="btn btn-sm active" style="background-color: #ffb380;" role="button" aria-pressed="true">Proses</a>
-                    </td>
-                    @else
-                    <td>
-                      <button type="button" class="btn btn-sm" style="background-color: #ffb380;" disabled>Done</button>
-                    </td>
-                    @endif
                 </tr>
                 @endforeach
             </tbody>
+            @endif
         </div>
     </div>
 

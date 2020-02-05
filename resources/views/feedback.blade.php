@@ -21,9 +21,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/">Home<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/">Home<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="/search">Search</a>
-            <a class="nav-item nav-link" href="/feedbackpage">Feedback</a>
+            <a class="nav-item nav-link active" href="/feedbackpage">Feedback</a>
             <a class="nav-item nav-link" href="/about">About</a>
           </div>
         </div>
@@ -35,31 +35,18 @@
     <div class="container mt-5">
       <div class="card">
         <div class="card-body">
-        <form action="/submit" method="post">
+        <form action="/feedback" method="post">
           {{ csrf_field() }}
           <div class="form-group">
-            <label>NIK</label>
-            <input type="text" class="form-control" name="nik">
+            <label>ID Pengeluhan</label>
+            <input type="text" class="form-control" name="id">
           </div>
           <div class="form-group">
-            <label>Jenis Pengaduan</label>
-            <select class="form-control" name="jenis">
-              <option value="">-Pilih-</option>
-              <option value="Kebersihan">Kebersihan</option>
-              <option value="Keamanan">Keamanan</option>
-              <option value="Sarana Prasarana">Sarana Prasarana</option>
-            </select>
+            <label>Feedback</label>
+            <textarea class="form-control" name="feedback" rows="5"></textarea>
           </div>
           <div class="form-group">
-            <label>Keluhan</label>
-            <textarea class="form-control" name="keluhan" rows="3"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Lokasi</label>
-            <input type="text" class="form-control" name="lokasi">
-          </div>
-          <div class="form-group">
-            <button type="submit" name="submit" class="btn btn-md" style="background-color: #e3f2fd;">Adukan</button>
+            <button type="submit" name="submit" class="btn btn-md" style="background-color: #e3f2fd;">Submit</button>
           </div>
         </form>
         </div>
